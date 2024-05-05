@@ -1,0 +1,8 @@
+/*
+Соотношение многие ко
+*/
+
+SELECT Products.ProductName, COALESCE(Categories.CategoryName, 'No category') AS CategoryName
+FROM Products
+LEFT JOIN ProductCategory ON Products.ProductId = ProductCategory.ProductId
+LEFT JOIN Categories ON ProductCategory.CategoryId = Categories.CategoryId;
